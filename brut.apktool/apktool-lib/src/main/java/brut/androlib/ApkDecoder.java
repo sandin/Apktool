@@ -139,7 +139,7 @@ public class ApkDecoder {
 
             if (hasMultipleSources()) {
                 // foreach unknown dex file in root, lets disassemble it
-                Set<String> files = mApkFile.getDirectory().getFiles(true);
+                Set<String> files = mApkFile.getDirectory().getFiles(mDecodeAssets == DECODE_ASSETS_FULL);
                 for (String file : files) {
                     if (file.endsWith(".dex")) {
                         if (! file.equalsIgnoreCase("classes.dex")) {
